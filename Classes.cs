@@ -5,12 +5,15 @@ public class Art
     public int Year;
     public string Place;
 
+    public string Discription;
+
     public Art(string name, string author, int year)
     {
         Name = name;
         Author = author;
         Year = year;
         Place = "В нашей галерее";
+        Discription = "Нет описания";
     }
 
     public void Print()
@@ -35,5 +38,15 @@ public class Art
             return;
         }
         Year = year;
+    }
+
+    public void ChangeDiscription(string discription)
+    {
+        Discription = discription;
+    }
+
+    public string GetDiscription()
+    {
+        return Discription;
     }
 }

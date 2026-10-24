@@ -17,6 +17,6 @@ art1.Print();
 art2.Print();
 art3.Print();
 
-
-
+art1.ChangeDiscription("Лена Шарова создала эту картину в году 1999 в рамках проекта «Волга»");
+Console.WriteLine(art1.GetDiscription());
 
