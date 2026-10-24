@@ -15,6 +15,25 @@ public class Art
 
     public void Print()
     {
+        Console.WriteLine("-------------------");
         Console.WriteLine($"{Name} от {Author} ({Year})");
+        Console.WriteLine($"Расположено {Place}");
+        Console.WriteLine("-------------------");
+        Console.WriteLine();
+
+    }
+
+    public void ChangePlace(string place)
+    {
+        Place = place;
+    }
+
+    public void ChangeYear(int year)
+    {
+        if (year > 2026)
+        {
+            return;
+        }
+        Year = year;
     }
 }
