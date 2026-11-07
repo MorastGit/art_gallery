@@ -1,8 +1,50 @@
 public class Art
 {
-    public string Name;
-    public string Author;
-    public int Year;
+    private string _name = "Без названия";
+    public string Name {
+        get {
+            return _name;
+        }
+
+        private set {
+            if (string.IsNullOrWhiteSpace(value)) {
+                _name = "Без названия";
+                return;
+            }
+
+            _name = value.Trim();
+        }
+    }
+
+    private string _author = "Неизвестно";
+    public string Author {get
+        {
+            return _author;
+        } private set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                _author = "Неизвестно";
+                return;
+            }
+            _author = value.Trim();
+
+        }
+    }
+    private int _year;
+    public int Year
+    {
+        get { return _year; }
+        private set
+        {
+            if (value > 2026)
+            {
+                _year = 2026; 
+                return;
+            }
+            _year = value;
+        }
+    }
     public string Place;
 
     public string Discription;
@@ -11,7 +53,7 @@ public class Art
     {
         Name = name;
         Author = author;
-        Year = year;
+        this.Year = year;
         Place = "В нашей галерее";
         Discription = "Нет описания";
     }
@@ -37,7 +79,7 @@ public class Art
         {
             return;
         }
-        Year = year;
+        this.Year = year;
     }
 
     public void ChangeDiscription(string discription)
